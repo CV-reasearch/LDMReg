@@ -1,1 +1,613 @@
-hello!!
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>LDMReg: A Hierarchical Feature-guided Latent
+    Diffusion Model for Multimodal Image Registration</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">LDMReg: A Hierarchical Feature-guided Latent
+              Diffusion Model for Multimodal Image Registration</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Bo Yang</a>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Zhaohui Jiang</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Dong Pan</a>,</span>
+                    <span class="author-block">
+                    <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Haoyang Yu</a>,</span>
+                  <span class="author-block">
+                    <a href="FIFTH AUTHOR PERSONAL LINK" target="_blank">Weihua Gui</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">School of Automation, Central South University</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/BOYang-pro/LDMReg" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Due to modality differences and inherent ambiguities (e.g., large deformations and image degradation, etc.), finding accurate correspondences is highly challenging in multimodal image registration  (MIR) tasks.     Limited by the encoder-decoder architecture, most existing methods primarily focus on directly learning correspondences without explicitly modeling feature priors, leading to poor performance in handling misalignments caused by modality differences and ambiguities.       To address these issues, we propose LDMReg, a diffusion model for MIR tasks.   Unlike traditional methods, LDMReg treats MIR as a conditional generation task, aligning and encoding multimodal features layer by layer, and using them as prior conditions to guide the diffusion process.            LDMReg consists of two main modules: a denoising network and a feature guidance module.   The former enhances denoising performance by replacing the UNet block with a nonlinear activation-free block.  The latter encodes features and facilitates cross-domain interactions, guiding the denoising network during reverse.   Additionally,  we apply the diffusion model in the latent space to reduce computational cost and adopt training strategies such as using multi-resolution noise instead of traditional noise.    Experimental results on four MIR tasks demonstrate that LDMReg outperforms existing methods in both quantitative and qualitative comparisons, and video application verifies its effectiveness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!--VI-IR-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <h2 class="title is-3">More Registration Results</h2>
+    </div>
+    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%; height: auto;">
+      <div class="image-container" style="width: 1200px;">
+        <img src="static/images/rigid_registration_ir.jpg" alt="MY ALT TEXT" class="custom-image"/>
+      </div>
+    <div style="width: 90%; text-align: left;">
+    <h2 class="subtitle has-text-left" >
+      Fig. 1. Comparison of registration results under VI-IR image tasks. (a) VI images. (b) Misaligned IR images. (c) CrossRAFT. (d) GLUNet. (e) IMF. (f) MURF. (g) Nemar. (h) RIFT. (i) XoFTR. (j) SemLA. (k) SuperFusion. (l) Ours. (The purple texture represents the gradient of the registered multimodel image, with the background showing the corresponding ground truth.).
+    </h2>
+  </div>
+</section>
+
+<style>
+  .custom-image {
+    width: 100%; 
+    height: auto; 
+  }
+</style>
+
+<!--VI-NIR-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%; height: auto;">
+      <div class="image-container" style="width: 1200px;">
+        <img src="static/images/rigid_registration_nir.jpg" alt="MY ALT TEXT" class="custom-image"/>
+      </div>
+      <div style="width: 90%; text-align: left;">
+      <h2 class="subtitle has-text-left" >
+        Fig. 2. Comparison of registration results under  VI-NIR image tasks. (a) VI images. (b) Misaligned NIR images. (c) CrossRAFT. (d) GLUNet. (e) IMF. (f) MURF. (g) Nemar. (h) RIFT. (i) XoFTR. (j) SemLA. (k) SuperFusion. (l) Ours. (The purple texture represents the gradient of the registered multimodel image, with the background showing the corresponding ground truth.).
+    </h2>
+  </div>
+</section>
+
+<style>
+  .custom-image {
+    width: 100%; 
+    height: auto; 
+  }
+</style>
+
+<!--RGB-D-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%; height: auto;">
+      <div class="image-container" style="width: 1200px;">
+        <img src="static/images/rigid_registration_rgbd.jpg" alt="MY ALT TEXT" class="custom-image"/>
+      </div>
+      <div style="width: 90%; text-align: left;">
+        <h2 class="subtitle has-text-left" >
+        Fig. 3. Comparison of registration results under RGB-D image tasks. (a) VI images. (b) Misaligned depth images. (c) CrossRAFT. (d) GLUNet. (e) IMF. (f) MURF. (g) Nemar. (h) RIFT. (i) XoFTR. (j) SemLA. (k) SuperFusion. (l) Ours. (The purple texture represents the gradient of the registered multimodel image, with the background showing the corresponding ground truth.).
+    </h2>
+  </div>
+</section>
+
+<style>
+  .custom-image {
+    width: 100%; 
+    height: auto; 
+  }
+</style>
+
+<!--VI-IR no-rigid-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%; height: auto;">
+      <div class="image-container" style="width: 1200px;">
+        <img src="static/images/Non_rigid_registration_ir.jpg" alt="MY ALT TEXT" class="custom-image"/>
+      </div>
+      <div style="width: 90%; text-align: left;">
+        <h2 class="subtitle has-text-left" >
+          Fig. 4. Comparison of registration results on non-rigid VI-IR images. (a) Source images. (b) Misaligned multimodel images. (c) CrossRAFT. (d) GLUNet. (e) IMF. (f) MURF. (g) Nemar. (h) FlowFormer++. (i) TransMorph. (j) SemLA. (k) SuperFusion. (l) Ours. (The purple texture represents the gradient of the registered multimodel image, with the background showing the corresponding ground truth.)
+        </h2>
+  </div>
+</section>
+
+<style>
+  .custom-image {
+    width: 100%; 
+    height: auto; 
+  }
+</style>
+
+<!--Med-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%; height: auto;">
+      <div class="image-container" style="width: 1200px;">
+        <img src="static/images/Non_rigid_registration_Med.jpg" alt="MY ALT TEXT" class="custom-image"/>
+      </div>
+      <div style="width: 90%; text-align: left;">
+        <h2 class="subtitle has-text-left" >
+        Fig. 5. Comparison of registration results on non-rigid Med images. (a) Source images. (b) Misaligned multimodel images. (c) CrossRAFT. (d) GLUNet. (e) IMF. (f) MURF. (g) Nemar. (h) FlowFormer++. (i) TransMorph. (j) SemLA. (k) SuperFusion. (l) Ours. (The purple texture represents the gradient of the registered multimodel image, with the background showing the corresponding ground truth.)
+      </h2>
+  </div>
+</section>
+
+<style>
+  .custom-image {
+    width: 100%; 
+    height: auto; 
+  }
+</style>
+<!-- Video Registration -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <h2 class="title is-3">Video Registration</h2>
+    </div>
+    <div class="container">
+           <!-- First row -->
+<div class="row">
+  <h2 class="subtitle has-text-centered">Rigid VI-NIR video registration</h2>
+  <div class="image-grid">
+    <div class="image-item">
+      <video controls>
+        <source src="static/rigid-video/vi_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/rigid-video/ir_warp_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned near-infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/rigid-video/result_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/rigid-video/vi_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/rigid-video/ir_warp_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned near-infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/rigid-video/result_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+  </div>
+</div>
+
+<!-- 第二行 -->
+<div class="row" style="text-align: left;">
+  <div class="image-grid" style="display: flex; justify-content: flex-start; gap: 20px;">
+    <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/rigid-video/vi_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/rigid-video/ir_warp_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/rigid-video/result_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+  </div>
+</div>
+      
+ <!-- 3rd row - Static Scene -->
+<div class="row">
+  <h2 class="subtitle has-text-centered">Non-rigid VI-IR video registration (Static scene)</h2>
+  <div class="image-grid">
+    <!-- First video pair -->
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/video_j_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/video_j_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/video_j_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+    
+    <!-- Second video pair -->
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/video_k_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/video_k_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/video_k_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- 4th row - Daytime Scene -->
+<div class="row">
+  <h2 class="subtitle has-text-centered">Non-rigid VI-IR video registration (Dynamic scene - Daytime)</h2>
+  <div class="image-grid">
+    <!-- First video pair -->
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/day1_vi.mp4" type="video/mp4">
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/day1_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/day1_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+    
+    <!-- Second video pair -->
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/day4_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/day4_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/day4_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+  </div>
+</div>
+
+<!-- 5th row - Nighttime Scene -->
+<div class="row">
+  <h2 class="subtitle has-text-centered">Non-rigid VI-IR video registration (Dynamic scene - Nighttime)</h2>
+  <div class="image-grid">
+    <!-- First video pair -->
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/night1_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/night1_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/night1_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+    
+    <!-- Second video pair -->
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/night4_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/night4_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+    <div class="image-item">
+      <video controls>
+        <source src="static/Non-rigid-video/night4_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+  </div>
+</div>
+
+<!-- 6th row - Another Nighttime Scene -->
+<div class="row" style="text-align: left;">
+  <div class="image-grid" style="display: flex; justify-content: flex-start; gap: 20px;">
+    <!-- First video -->
+    <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/Non-rigid-video/night5_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+    
+    <!-- Second video -->
+    <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/Non-rigid-video/night5_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+
+    <!-- Third video -->
+    <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/Non-rigid-video/night5_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+
+     <!-- 4 video -->
+     <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/Non-rigid-video/night2_vi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Visible image</p>
+    </div>
+
+     <!-- 5 video -->
+     <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/Non-rigid-video/night2_ir_warp.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Unaligned infrared image</p>
+    </div>
+
+     <!-- 6 video -->
+     <div class="image-item" style="text-align: center;">
+      <video controls>
+        <source src="static/Non-rigid-video/night2_result.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="image-name">Registration result</p>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .row {
+    text-align: center;
+  }
+
+  .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .image-item {
+    width: calc(100% / 6 - 20px);
+    text-align: center;
+  }
+
+  .image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .image-name {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+  }
+
+  h2.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+</style>
+
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+             This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
